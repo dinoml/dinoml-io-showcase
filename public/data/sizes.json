@@ -1,0 +1,627 @@
+{
+  "schema_version": 1,
+  "measured_at": "2026-10-15T12:34:28.375123+00:00",
+  "basis": "Unpacked logical file bytes; local release executables and selected runtime artifacts. Packages are unavailable.",
+  "headline": "UI executable plus compiled modules, including correction and deformation DLLs.",
+  "excluded": [
+    "Model weights and constants",
+    "Checkpoint/tokenizer configuration",
+    "ROCm and Visual C++ runtime DLLs",
+    "Demo assets, licences and packaging files",
+    "Debug, compiler-only outputs and static link inputs"
+  ],
+  "selection": {
+    "custom-voice": "The coherent artifact pair used for the showcase's native speech capture; Qwen defaults now use package-relative paths.",
+    "motion-and-gaussians": "Artifact paths from TripoSplat Studio model.rs and motion.rs defaults."
+  },
+  "applications": {
+    "custom-voice": {
+      "ui": {
+        "path": "facet-qwen-workbench.exe",
+        "role": "ui",
+        "bytes": 18971136,
+        "sha256": "ad75d5ef134b816ccdbf249c8748819134189da77388cddc78cd8f91de1259fb"
+      },
+      "components": [
+        {
+          "label": "Speech generation",
+          "files": [
+            {
+              "path": "generation/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 983982,
+              "sha256": "8ba8ff003d27d1c0ca3fa6aaf93eda1c55ca5ce4601631f51381803b794da4ce"
+            },
+            {
+              "path": "generation/module.so",
+              "role": "compiled_module",
+              "bytes": 12190720,
+              "sha256": "236e5b4b58d51716769d81771dd29d04580db3dcb33a1a83abcbd1a18ca53849"
+            },
+            {
+              "path": "generation/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 2416652,
+              "sha256": "21a6ca714f84e258f8257ed03d02cb9c15a5b5e0dfece4ef698639fd74721002"
+            },
+            {
+              "path": "generation/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "25bdd6af01ab085ef6e4a4322420ef79b5f9593f90c546f767a768b8faa96819"
+            },
+            {
+              "path": "generation/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "0e16645fb61289d79d4d9430dd6b57aae81b321c8372eb3d26122e30cbe0b718"
+            },
+            {
+              "path": "generation/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "b09853bd065b4e2d2248bf7a2764d4f3b11ac9a4ffcd1ce7cb5ab32a695ecda9"
+            }
+          ],
+          "module_bytes": 12190720
+        },
+        {
+          "label": "Audio decoder",
+          "files": [
+            {
+              "path": "decoder/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 969830,
+              "sha256": "be7efc0cde99fb1b821c3cf182747a6cd674fb9c695a8f353411950ef69c1783"
+            },
+            {
+              "path": "decoder/module.so",
+              "role": "compiled_module",
+              "bytes": 7824896,
+              "sha256": "f1d7d29d7b582dfbcbdc75c7e08e5efb3e51dd963ca8bc2ce517bc4739ba22a6"
+            },
+            {
+              "path": "decoder/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 350447,
+              "sha256": "cb56d30f415478df9255c81147577219e397a15c3e34b6adad0accd9e6053d84"
+            },
+            {
+              "path": "decoder/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "25bdd6af01ab085ef6e4a4322420ef79b5f9593f90c546f767a768b8faa96819"
+            },
+            {
+              "path": "decoder/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "0e16645fb61289d79d4d9430dd6b57aae81b321c8372eb3d26122e30cbe0b718"
+            },
+            {
+              "path": "decoder/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "b09853bd065b4e2d2248bf7a2764d4f3b11ac9a4ffcd1ce7cb5ab32a695ecda9"
+            }
+          ],
+          "module_bytes": 7824896
+        }
+      ],
+      "totals": {
+        "ui": 18971136,
+        "compiled_module": 20015616,
+        "admission_metadata": 4720911,
+        "support_library": 1746944
+      },
+      "ui_and_modules_bytes": 38986752,
+      "support_unique_bytes": 873472,
+      "support_duplicate_bytes": 873472
+    },
+    "motion-and-gaussians": {
+      "ui": {
+        "path": "facet-triposplat-studio.exe",
+        "role": "ui",
+        "bytes": 22337536,
+        "sha256": "fd013c8b3709c33dffeb066c52261c91df95c43ea2c40dc7d46a4d39e2a629c7"
+      },
+      "components": [
+        {
+          "label": "TripoSplat \u00b7 background removal",
+          "files": [
+            {
+              "path": "triposplat/background_removal/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 986838,
+              "sha256": "1bdfbec6344b065c9b01739bb071bcc81c123f8bf91631a1fe69433d540589b2"
+            },
+            {
+              "path": "triposplat/background_removal/module.so",
+              "role": "compiled_module",
+              "bytes": 25829888,
+              "sha256": "8cec246fd480e3b61ca781aab40d57c91cb31c7bbe13f111048c130bb8b7427e"
+            },
+            {
+              "path": "triposplat/background_removal/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 2786524,
+              "sha256": "7b1bff1f1e228b318b7f6592e58d586250e5c3249400297042bd194fafef9210"
+            },
+            {
+              "path": "triposplat/background_removal/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "c2f751cad582d14bea901cc99b46fd7cab13da5670039816278e2449f8725a2f"
+            },
+            {
+              "path": "triposplat/background_removal/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "7c11f98a834dc5de9ed37ac6e7081241e4d837554c3d17ddead26c7cf684aaee"
+            },
+            {
+              "path": "triposplat/background_removal/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "5ec2447a81ff9e24a072790de0173d962c55dbf1e5855d8a0460be553ee4fc01"
+            }
+          ],
+          "module_bytes": 25829888
+        },
+        {
+          "label": "TripoSplat \u00b7 vision",
+          "files": [
+            {
+              "path": "triposplat/vision/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 969840,
+              "sha256": "7b6c15bb0782772b431399c465df12ec1f7fff17c30acc9cd013b73deec66999"
+            },
+            {
+              "path": "triposplat/vision/module.so",
+              "role": "compiled_module",
+              "bytes": 6423040,
+              "sha256": "727cfc378860b81c06a4c1e0045e85425556ec957b12ffc28198718d91dbb30e"
+            },
+            {
+              "path": "triposplat/vision/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 1326397,
+              "sha256": "fb140c532bccdb8647d1cc77f7f3c4465af227b3c7addea0e9571a2b48aa694f"
+            },
+            {
+              "path": "triposplat/vision/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "c2f751cad582d14bea901cc99b46fd7cab13da5670039816278e2449f8725a2f"
+            },
+            {
+              "path": "triposplat/vision/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "7c11f98a834dc5de9ed37ac6e7081241e4d837554c3d17ddead26c7cf684aaee"
+            },
+            {
+              "path": "triposplat/vision/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "5ec2447a81ff9e24a072790de0173d962c55dbf1e5855d8a0460be553ee4fc01"
+            }
+          ],
+          "module_bytes": 6423040
+        },
+        {
+          "label": "TripoSplat \u00b7 image encoder",
+          "files": [
+            {
+              "path": "triposplat/image_encoder/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 963619,
+              "sha256": "35967b62f2316fed5fedd0a49c4fa66c65318946ee718c249021ca3b2c9f2099"
+            },
+            {
+              "path": "triposplat/image_encoder/module.so",
+              "role": "compiled_module",
+              "bytes": 7271424,
+              "sha256": "dd023282e9d8963636951ebc476eadbd7573f4fcf63fa11b44fe88a7e2961fa8"
+            },
+            {
+              "path": "triposplat/image_encoder/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 153472,
+              "sha256": "56d6aab55ae3f23d2e6bbffe002a01bba4b14149c49522ef7db918e2204e5200"
+            },
+            {
+              "path": "triposplat/image_encoder/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "c2f751cad582d14bea901cc99b46fd7cab13da5670039816278e2449f8725a2f"
+            },
+            {
+              "path": "triposplat/image_encoder/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "7c11f98a834dc5de9ed37ac6e7081241e4d837554c3d17ddead26c7cf684aaee"
+            },
+            {
+              "path": "triposplat/image_encoder/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "5ec2447a81ff9e24a072790de0173d962c55dbf1e5855d8a0460be553ee4fc01"
+            }
+          ],
+          "module_bytes": 7271424
+        },
+        {
+          "label": "TripoSplat \u00b7 conditioning",
+          "files": [
+            {
+              "path": "triposplat/conditioning/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 976397,
+              "sha256": "0803435784a0f27adc9723a92312dae641e1803267f4af1502bdfe12ced88a67"
+            },
+            {
+              "path": "triposplat/conditioning/module.so",
+              "role": "compiled_module",
+              "bytes": 3755520,
+              "sha256": "521259c5437172632b4cc8fef447952cad72ecf6786996c8ce9679dda105907c"
+            },
+            {
+              "path": "triposplat/conditioning/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 141797,
+              "sha256": "007d9db9bbf3020a6455066f7b9d0a11d7fca832c02ab26eb46b14f5a7e34c92"
+            },
+            {
+              "path": "triposplat/conditioning/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "c2f751cad582d14bea901cc99b46fd7cab13da5670039816278e2449f8725a2f"
+            },
+            {
+              "path": "triposplat/conditioning/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "7c11f98a834dc5de9ed37ac6e7081241e4d837554c3d17ddead26c7cf684aaee"
+            },
+            {
+              "path": "triposplat/conditioning/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "5ec2447a81ff9e24a072790de0173d962c55dbf1e5855d8a0460be553ee4fc01"
+            }
+          ],
+          "module_bytes": 3755520
+        },
+        {
+          "label": "TripoSplat \u00b7 flow",
+          "files": [
+            {
+              "path": "triposplat/flow/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 977098,
+              "sha256": "7233fef0a66d4fb58f3359a41f5c63f7fb1a503279b1bef63ab5ffa90f79b32a"
+            },
+            {
+              "path": "triposplat/flow/module.so",
+              "role": "compiled_module",
+              "bytes": 8751616,
+              "sha256": "c6f6c244ebf4882ea2023fea256123ceb0650f24b479ce86e16f8f0a43a8707a"
+            },
+            {
+              "path": "triposplat/flow/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 1606618,
+              "sha256": "b7d0865d260bdd98eda53eb6672832989cb129d74b7000fe7943c3d8b68765f0"
+            },
+            {
+              "path": "triposplat/flow/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "c2f751cad582d14bea901cc99b46fd7cab13da5670039816278e2449f8725a2f"
+            },
+            {
+              "path": "triposplat/flow/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "7c11f98a834dc5de9ed37ac6e7081241e4d837554c3d17ddead26c7cf684aaee"
+            },
+            {
+              "path": "triposplat/flow/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "5ec2447a81ff9e24a072790de0173d962c55dbf1e5855d8a0460be553ee4fc01"
+            }
+          ],
+          "module_bytes": 8751616
+        },
+        {
+          "label": "TripoSplat \u00b7 octree",
+          "files": [
+            {
+              "path": "triposplat/octree/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 968150,
+              "sha256": "256a53be8a0d6d6a796db763b2a3b24de92a4c3cc9c2bf36517311dc889c1fac"
+            },
+            {
+              "path": "triposplat/octree/module.so",
+              "role": "compiled_module",
+              "bytes": 3491328,
+              "sha256": "d8c9b182ea54696fc1688ece5f7b8fd17b3e8206af25418c92ece2dfa9753db2"
+            },
+            {
+              "path": "triposplat/octree/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 189266,
+              "sha256": "a93d7b6963761951c1a54b73b5e8dcfb082416dfcf0629046138b151350d0eb1"
+            },
+            {
+              "path": "triposplat/octree/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "c2f751cad582d14bea901cc99b46fd7cab13da5670039816278e2449f8725a2f"
+            },
+            {
+              "path": "triposplat/octree/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "7c11f98a834dc5de9ed37ac6e7081241e4d837554c3d17ddead26c7cf684aaee"
+            },
+            {
+              "path": "triposplat/octree/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "5ec2447a81ff9e24a072790de0173d962c55dbf1e5855d8a0460be553ee4fc01"
+            }
+          ],
+          "module_bytes": 3491328
+        },
+        {
+          "label": "TripoSplat \u00b7 gaussians",
+          "files": [
+            {
+              "path": "triposplat/gaussians/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 966398,
+              "sha256": "bee8a1185391790723d67f79f173b89aa462e7d5b4225ab35a059928397897a8"
+            },
+            {
+              "path": "triposplat/gaussians/module.so",
+              "role": "compiled_module",
+              "bytes": 4802560,
+              "sha256": "d978c839bcbcd627538a619cc6f89e81a03899ca9d5aa4fb47522211743cd90b"
+            },
+            {
+              "path": "triposplat/gaussians/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 889816,
+              "sha256": "ac0b9b5d2ee1066df52f2056ae265ad300f273253b5ca53daadae96d46f90d07"
+            },
+            {
+              "path": "triposplat/gaussians/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "c2f751cad582d14bea901cc99b46fd7cab13da5670039816278e2449f8725a2f"
+            },
+            {
+              "path": "triposplat/gaussians/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "7c11f98a834dc5de9ed37ac6e7081241e4d837554c3d17ddead26c7cf684aaee"
+            },
+            {
+              "path": "triposplat/gaussians/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "5ec2447a81ff9e24a072790de0173d962c55dbf1e5855d8a0460be553ee4fc01"
+            }
+          ],
+          "module_bytes": 4802560
+        },
+        {
+          "label": "Kimodo \u00b7 text",
+          "files": [
+            {
+              "path": "kimodo/text/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 984648,
+              "sha256": "71d3dac65407bd03a1e124c8070cbdef9b072edbeea181fb1beee047de90bbce"
+            },
+            {
+              "path": "kimodo/text/module.so",
+              "role": "compiled_module",
+              "bytes": 6621184,
+              "sha256": "62bd0fee50743c10443b47cc2f816a5470831a109cdcfb69789404e3fa3eb2d7"
+            },
+            {
+              "path": "kimodo/text/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 1634846,
+              "sha256": "c53b506aa74acca2cdcc91ba6407890dda3801109e015c4a081d66c7101abc4a"
+            },
+            {
+              "path": "kimodo/text/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "c2f751cad582d14bea901cc99b46fd7cab13da5670039816278e2449f8725a2f"
+            },
+            {
+              "path": "kimodo/text/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "7c11f98a834dc5de9ed37ac6e7081241e4d837554c3d17ddead26c7cf684aaee"
+            },
+            {
+              "path": "kimodo/text/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "5ec2447a81ff9e24a072790de0173d962c55dbf1e5855d8a0460be553ee4fc01"
+            }
+          ],
+          "module_bytes": 6621184
+        },
+        {
+          "label": "Kimodo \u00b7 root",
+          "files": [
+            {
+              "path": "kimodo/root/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 972837,
+              "sha256": "0925f47f556be313554593e6eccb39b9be8a1f82a0dc24a9c54727686e76a434"
+            },
+            {
+              "path": "kimodo/root/module.so",
+              "role": "compiled_module",
+              "bytes": 4230144,
+              "sha256": "994ccdd5375fbde5037418f6b8d4680365beb1dd0b40301495acd52f662013a9"
+            },
+            {
+              "path": "kimodo/root/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 510691,
+              "sha256": "bde421859bedfbb2c799166ec608903461b684a5c044707a2fb3436f7809fb5a"
+            },
+            {
+              "path": "kimodo/root/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "c2f751cad582d14bea901cc99b46fd7cab13da5670039816278e2449f8725a2f"
+            },
+            {
+              "path": "kimodo/root/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "7c11f98a834dc5de9ed37ac6e7081241e4d837554c3d17ddead26c7cf684aaee"
+            },
+            {
+              "path": "kimodo/root/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "5ec2447a81ff9e24a072790de0173d962c55dbf1e5855d8a0460be553ee4fc01"
+            }
+          ],
+          "module_bytes": 4230144
+        },
+        {
+          "label": "Kimodo \u00b7 body",
+          "files": [
+            {
+              "path": "kimodo/body/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 972837,
+              "sha256": "6cc8f8a7b208feddd87be0eae86ea06cc2f2c6a62c6db3b199dbe1c26bb45655"
+            },
+            {
+              "path": "kimodo/body/module.so",
+              "role": "compiled_module",
+              "bytes": 4230144,
+              "sha256": "95b10b5b6d1db79c702c14aef3a45989e9255430918dee1ec6199ed4fa6fbb0e"
+            },
+            {
+              "path": "kimodo/body/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 510713,
+              "sha256": "1a9cefe9bc8a82793d96310cb7b9e80bf168146a2c26e03cd3986bab3211e02b"
+            },
+            {
+              "path": "kimodo/body/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "c2f751cad582d14bea901cc99b46fd7cab13da5670039816278e2449f8725a2f"
+            },
+            {
+              "path": "kimodo/body/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "7c11f98a834dc5de9ed37ac6e7081241e4d837554c3d17ddead26c7cf684aaee"
+            },
+            {
+              "path": "kimodo/body/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "5ec2447a81ff9e24a072790de0173d962c55dbf1e5855d8a0460be553ee4fc01"
+            }
+          ],
+          "module_bytes": 4230144
+        },
+        {
+          "label": "MediaPipe Pose Landmarker Heavy",
+          "files": [
+            {
+              "path": "pose/manifest.json",
+              "role": "admission_metadata",
+              "bytes": 960936,
+              "sha256": "956b3d7fac501bec1d00b888b451e34a179d0f0c3b5e0a4082030cb8dfb5b0d9"
+            },
+            {
+              "path": "pose/module.so",
+              "role": "compiled_module",
+              "bytes": 6676480,
+              "sha256": "d09178da6eb2ead35c2c34acb80c92d7b2d31d25ae6d3bc329749c2a247e7d1e"
+            },
+            {
+              "path": "pose/metadata.json",
+              "role": "admission_metadata",
+              "bytes": 762440,
+              "sha256": "a8f27a7424798b286ce33ee27e3af0f41d6acfb6ea096d030484007a97926b6c"
+            },
+            {
+              "path": "pose/lib/dinoml_rocm_kernels.dll",
+              "role": "support_library",
+              "bytes": 585216,
+              "sha256": "c2f751cad582d14bea901cc99b46fd7cab13da5670039816278e2449f8725a2f"
+            },
+            {
+              "path": "pose/lib/dinoml_rocm_runtime.dll",
+              "role": "support_library",
+              "bytes": 152064,
+              "sha256": "7c11f98a834dc5de9ed37ac6e7081241e4d837554c3d17ddead26c7cf684aaee"
+            },
+            {
+              "path": "pose/lib/dinoml_runtime.dll",
+              "role": "support_library",
+              "bytes": 136192,
+              "sha256": "5ec2447a81ff9e24a072790de0173d962c55dbf1e5855d8a0460be553ee4fc01"
+            }
+          ],
+          "module_bytes": 6676480
+        },
+        {
+          "label": "Kimodo \u00b7 MotionCorrection",
+          "files": [
+            {
+              "path": "dinoml_kimodo_correction.dll",
+              "role": "compiled_module",
+              "bytes": 333824,
+              "sha256": "f221c706dc869c6965113f149545150e579c0a8abe6b13da0c23652d73436a55"
+            }
+          ],
+          "module_bytes": 333824
+        },
+        {
+          "label": "GPU Gaussian deformation",
+          "files": [
+            {
+              "path": "dinoml_gaussian_deformation.dll",
+              "role": "compiled_module",
+              "bytes": 770048,
+              "sha256": "26d52b115a7d9aed72fcd61f5b218b8f1813e67326c102c00209c87de1bb2857"
+            }
+          ],
+          "module_bytes": 770048
+        }
+      ],
+      "totals": {
+        "ui": 22337536,
+        "compiled_module": 83187200,
+        "admission_metadata": 21212178,
+        "support_library": 9608192
+      },
+      "ui_and_modules_bytes": 105524736,
+      "support_unique_bytes": 873472,
+      "support_duplicate_bytes": 8734720
+    }
+  }
+}
